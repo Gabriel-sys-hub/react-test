@@ -1,0 +1,17 @@
+* {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title_container {
+  width: 100%;
+}
+
+.title {
+  background-color: rgb(82, 82, 82);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
