@@ -63,19 +63,21 @@ export default function EscTable() {
       .then((result) => setSelectFilter(result.results));
   };
 
-    const maior0 = schoolDetail.map(school => school.count < 250 && school.count).reduce((acc, num) => acc + num);
-    const maior251 = schoolDetail.map(school => school.count > 251 & school.count < 500 && school.count).reduce((acc, num) => acc + num);
-    const maior501 = schoolDetail.map(school => school.count > 501 & school.count < 1000 && school.count).reduce((acc, num) => acc + num);
-    const maior1001 = schoolDetail.map(school => school.count > 1001 & school.count < 1500 && school.count).reduce((acc, num) => acc + num);
-    const maior1501 = schoolDetail.map(school => school.count > 1501 & school.count < 2000 && school.count).reduce((acc, num) => acc + num);
-    const maior2001 = schoolDetail.map(school => school.count > 2001 & school.count < 2500 && school.count).reduce((acc, num) => acc + num);
-    const maior2501 = schoolDetail.map(school => school.count > 2501 && school.count).reduce((acc, num) => acc + num);
-    const total = schoolDetail.map(school => school.count).reduce((acc, num) => acc + num);
-
   useEffect(() => {
     getSchoolDetails();
     getDiretoriaInicial();
   }, [getSchoolDetails, getDiretoriaInicial]);
+
+  if (schoolDetail.length > 0) {
+    var maior0 = schoolDetail.map(school => school.count < 250 && school.count).reduce((acc, num) => acc + num);
+    var maior251 = schoolDetail.map(school => school.count > 251 & school.count < 500 && school.count).reduce((acc, num) => acc + num);
+    var maior501 = schoolDetail.map(school => school.count > 501 & school.count < 1000 && school.count).reduce((acc, num) => acc + num);
+    var maior1001 = schoolDetail.map(school => school.count > 1001 & school.count < 1500 && school.count).reduce((acc, num) => acc + num);
+    var maior1501 = schoolDetail.map(school => school.count > 1501 & school.count < 2000 && school.count).reduce((acc, num) => acc + num);
+    var maior2001 = schoolDetail.map(school => school.count > 2001 & school.count < 2500 && school.count).reduce((acc, num) => acc + num);
+    var maior2501 = schoolDetail.map(school => school.count > 2501 && school.count).reduce((acc, num) => acc + num);
+    var total = schoolDetail.map(school => school.count).reduce((acc, num) => acc + num);
+  }
 
   return (
     <TableContainer component={Paper}>
