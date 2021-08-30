@@ -198,6 +198,9 @@ export default function EscTable() {
                   <StyledTableCell align="right">
                     {row.count > 2501 ? row.count : 0}
                   </StyledTableCell>
+                  <StyledTableCell align="right">
+                    {row.count}
+                  </StyledTableCell>
                 </StyledTableRow>
               ))}
              <StyledTableRow>
